@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://co8li203e5jvn"]
+
+[ext_resource type="PackedScene" uid="uid://dlcg3nup6suuo" path="res://assets/monsters/maxdamage_scab-low-poly.gltf" id="1_3tw8j"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u3fti"]
+radius = 0.715
+
+[node name="bug" instance=ExtResource("1_3tw8j")]
+
+[node name="Skeleton3D" parent="ScabArmature" index="0"]
+bones/0/rotation = Quaternion(0.5, 0.5, 0.5, 0.5)
+bones/1/rotation = Quaternion(-0.477582, 0.130075, -0.477812, 0.725735)
+bones/2/rotation = Quaternion(0.775271, -0.43385, 0.419385, -0.186669)
+bones/3/rotation = Quaternion(0, -0.720244, 0, 0.693721)
+bones/5/rotation = Quaternion(0.468947, 0.735919, 0.471119, 0.128686)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.775271, 0.433851, -0.419385, -0.18667)
+bones/7/rotation = Quaternion(0, -0.693721, 0, 0.720244)
+bones/8/rotation = Quaternion(0, -0.693721, 0, 0.720244)
+bones/9/rotation = Quaternion(0, -0.720244, 0, 0.693721)
+bones/10/rotation = Quaternion(0, -0.693721, 0, 0.720244)
+bones/11/rotation = Quaternion(0.496673, 0.503304, -0.496674, 0.503305)
+bones/12/rotation = Quaternion(-0.816467, -9.19875e-09, 6.94305e-07, 0.577392)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(-0.295639, 0.0874489, -0.393217, 0.866216)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.428534, 0.787999, -0.338492, 0.284323)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/rotation = Quaternion(-0.295152, -0.0671594, 0.372989, 0.877071)
+bones/16/rotation = Quaternion(0.428534, 0.787999, -0.338492, -0.284324)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(0.003293, 0.984291, 0.175553, 0.0184622)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(-0.00329294, 0.984291, 0.175553, -0.0184639)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(0.708843, -1.11914e-08, -6.02752e-07, 0.705366)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+shape = SubResource("SphereShape3D_u3fti")
