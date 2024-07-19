@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1721395698
+::res://::1721397001
 bug.res::Animation::803833943118885448::1721395560::0::1::::<><>::
-export_presets.cfg::TextFile::-1::1718978146::0::1::::<><>::
+export_presets.cfg::TextFile::-1::1721395704::0::1::::<><>::
 icon.svg::CompressedTexture2D::2249746702088556883::1717762325::1721395552::1::::<><>::
 README.md::TextFile::-1::1721388030::0::1::::<><>::
 ::res://assets/::1720018309
@@ -275,10 +275,10 @@ maxdamage_scab-low-poly_bug1.png::CompressedTexture2D::5461171389741919960::1720
 maxdamage_scab-low-poly_t_scab_emission.png::CompressedTexture2D::2233813769094496502::1720018314::1721395552::1::::<><>::
 t_scab.png::CompressedTexture2D::9143847861474245803::1645972116::1721395552::1::::<><>::
 t_scab_emission.png::CompressedTexture2D::3725175986749720035::1645973526::1721395552::1::::<><>::
-::res://build/::1721395703
-pdi-godot.apple-touch-icon.png::CompressedTexture2D::8748822245959972906::1721395703::1721395703::1::::<><>::
-pdi-godot.icon.png::CompressedTexture2D::5677620776535112831::1721395703::1721395703::1::::<><>::
-pdi-godot.png::CompressedTexture2D::890421730647475469::1721395703::1721395704::1::::<><>::
+::res://build/::1721397015
+index.apple-touch-icon.png::CompressedTexture2D::6337667246575040419::1721397015::1721397015::1::::<><>::
+index.icon.png::CompressedTexture2D::2100005503133239056::1721397015::1721397015::1::::<><>::
+index.png::CompressedTexture2D::4816318392052555792::1721397015::1721397015::1::::<><>::
 ::res://deploy/::1718978146
 ::res://imgs/::1721395553
 1.png::CompressedTexture2D::5356177068802837504::1721385856::1721395553::1::::<><>::
