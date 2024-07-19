@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Review v3"
+config/name="pdi-godot"
 run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
