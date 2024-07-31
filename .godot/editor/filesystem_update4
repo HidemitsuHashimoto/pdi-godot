@@ -1,1 +1,4 @@
 res://bug.res
+res://scenes/world.tscn
+res://mesh/world.tres
+res://addons/virtual_joystick/virtual_joystick.gd

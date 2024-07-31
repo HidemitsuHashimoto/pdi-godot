@@ -598,7 +598,7 @@ function createExportWrapper(name, fixedasm) {
 
 var wasmBinaryFile;
 
-wasmBinaryFile = "godot.web.template_debug.wasm32.wasm";
+wasmBinaryFile = "godot.web.template_release.wasm32.wasm";
 
 if (!isDataURI(wasmBinaryFile)) {
  wasmBinaryFile = locateFile(wasmBinaryFile);
@@ -3773,7 +3773,7 @@ var PThread = {
  },
  allocateUnusedWorker: function() {
   var worker;
-  var pthreadMainJs = locateFile("godot.web.template_debug.wasm32.worker.js");
+  var pthreadMainJs = locateFile("godot.web.template_release.wasm32.worker.js");
   worker = new Worker(pthreadMainJs);
   PThread.unusedWorkers.push(worker);
  },
@@ -13103,6 +13103,8 @@ var dynCall_viiiiiji = Module["dynCall_viiiiiji"] = createExportWrapper("dynCall
 
 var dynCall_vijj = Module["dynCall_vijj"] = createExportWrapper("dynCall_vijj");
 
+var dynCall_vijiiiiiidddd = Module["dynCall_vijiiiiiidddd"] = createExportWrapper("dynCall_vijiiiiiidddd");
+
 var dynCall_jiiii = Module["dynCall_jiiii"] = createExportWrapper("dynCall_jiiii");
 
 var dynCall_jiijiiii = Module["dynCall_jiijiiii"] = createExportWrapper("dynCall_jiijiiii");
@@ -13120,8 +13122,6 @@ var dynCall_jijjjiiiiijii = Module["dynCall_jijjjiiiiijii"] = createExportWrappe
 var dynCall_jijiiiiifiii = Module["dynCall_jijiiiiifiii"] = createExportWrapper("dynCall_jijiiiiifiii");
 
 var dynCall_viijiiiiiifiii = Module["dynCall_viijiiiiiifiii"] = createExportWrapper("dynCall_viijiiiiiifiii");
-
-var dynCall_vijiiiiiidddd = Module["dynCall_vijiiiiiidddd"] = createExportWrapper("dynCall_vijiiiiiidddd");
 
 var dynCall_viji = Module["dynCall_viji"] = createExportWrapper("dynCall_viji");
 
@@ -13173,11 +13173,11 @@ var dynCall_vijdddd = Module["dynCall_vijdddd"] = createExportWrapper("dynCall_v
 
 var dynCall_vijififi = Module["dynCall_vijififi"] = createExportWrapper("dynCall_vijififi");
 
-var dynCall_iiiij = Module["dynCall_iiiij"] = createExportWrapper("dynCall_iiiij");
-
 var dynCall_iijji = Module["dynCall_iijji"] = createExportWrapper("dynCall_iijji");
 
 var dynCall_viijj = Module["dynCall_viijj"] = createExportWrapper("dynCall_viijj");
+
+var dynCall_iiiij = Module["dynCall_iiiij"] = createExportWrapper("dynCall_iiiij");
 
 var dynCall_dij = Module["dynCall_dij"] = createExportWrapper("dynCall_dij");
 
