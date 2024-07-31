@@ -199,40 +199,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Task1" type="AnimationPlayer" parent="Control"]
-libraries = {
-"": SubResource("AnimationLibrary_p6c24")
-}
-
-[node name="1" type="Sprite2D" parent="Control/Task1"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(575.517, 323.75)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("6_dn3w5")
-
-[node name="Task2" type="AnimationPlayer" parent="Control"]
-libraries = {
-"": SubResource("AnimationLibrary_uup4v")
-}
-
-[node name="2" type="Sprite2D" parent="Control/Task2"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(575.517, 323.75)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("8_ggeab")
-
-[node name="Task3" type="AnimationPlayer" parent="Control"]
-libraries = {
-"": SubResource("AnimationLibrary_k1wke")
-}
-
-[node name="3" type="Sprite2D" parent="Control/Task3"]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(575.517, 323.75)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("9_i0ag7")
-
 [node name="Virtual Joystick" type="Control" parent="Control"]
+z_index = 1
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -317,6 +285,39 @@ offset_right = 285.0
 offset_bottom = 160.0
 text = "D"
 horizontal_alignment = 1
+
+[node name="Task1" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_p6c24")
+}
+
+[node name="1" type="Sprite2D" parent="Control/Task1"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(575.517, 323.75)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_dn3w5")
+
+[node name="Task2" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_uup4v")
+}
+
+[node name="2" type="Sprite2D" parent="Control/Task2"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(575.517, 323.75)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_ggeab")
+
+[node name="Task3" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_k1wke")
+}
+
+[node name="3" type="Sprite2D" parent="Control/Task3"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(575.517, 323.75)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_i0ag7")
 
 [node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 0.916865, 0.399197, 0, -0.399197, 0.916865, 0, 4.19546, 6.76135)
