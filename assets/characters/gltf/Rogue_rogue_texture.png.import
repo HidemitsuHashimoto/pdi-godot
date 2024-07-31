@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://byhkrativtaht"
 path.s3tc="res://.godot/imported/Rogue_rogue_texture.png-92bc6dca4764690641eefca58ee741f2.s3tc.ctex"
+path.etc2="res://.godot/imported/Rogue_rogue_texture.png-92bc6dca4764690641eefca58ee741f2.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/characters/gltf/Rogue_rogue_texture.png"
-dest_files=["res://.godot/imported/Rogue_rogue_texture.png-92bc6dca4764690641eefca58ee741f2.s3tc.ctex"]
+dest_files=["res://.godot/imported/Rogue_rogue_texture.png-92bc6dca4764690641eefca58ee741f2.s3tc.ctex", "res://.godot/imported/Rogue_rogue_texture.png-92bc6dca4764690641eefca58ee741f2.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://63ct65moem7g"
 path.s3tc="res://.godot/imported/maxdamage_scab-low-poly_t_scab_emission.png-7742d75e4e85eb09d5a63bc5bdbd4b9d.s3tc.ctex"
+path.etc2="res://.godot/imported/maxdamage_scab-low-poly_t_scab_emission.png-7742d75e4e85eb09d5a63bc5bdbd4b9d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/monsters/maxdamage_scab-low-poly_t_scab_emission.png"
-dest_files=["res://.godot/imported/maxdamage_scab-low-poly_t_scab_emission.png-7742d75e4e85eb09d5a63bc5bdbd4b9d.s3tc.ctex"]
+dest_files=["res://.godot/imported/maxdamage_scab-low-poly_t_scab_emission.png-7742d75e4e85eb09d5a63bc5bdbd4b9d.s3tc.ctex", "res://.godot/imported/maxdamage_scab-low-poly_t_scab_emission.png-7742d75e4e85eb09d5a63bc5bdbd4b9d.etc2.ctex"]
 
 [params]
 
