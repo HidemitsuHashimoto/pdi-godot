@@ -45,7 +45,7 @@ _data = {
 [node name="Coin" type="Area3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(1.33, 0, 0, 0, -5.81361e-08, -1.33, 0, 1.33, -5.81361e-08, 0, 0, 0)
 shape = SubResource("SphereShape3D_cnnvr")
 
 [node name="coin_asset" parent="." instance=ExtResource("1_wnw6e")]
@@ -56,3 +56,9 @@ libraries = {
 "": SubResource("AnimationLibrary_073k1")
 }
 autoplay = "rotation"
+
+[node name="AreaEnterText" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.319191, 0.118914)
+visible = false
+text = "Aperte F"
+font_size = 20

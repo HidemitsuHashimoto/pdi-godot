@@ -1,10 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://5p300a7hdbft"]
+[gd_scene load_steps=38 format=3 uid="uid://5p300a7hdbft"]
 
 [ext_resource type="MeshLibrary" uid="uid://dx1c366dxbe55" path="res://mesh/world.tres" id="1_3k5b4"]
 [ext_resource type="Script" path="res://scripts/CameraPivot.gd" id="1_dl3h3"]
 [ext_resource type="Script" path="res://scripts/CharacterBody3D.gd" id="2_poj2v"]
 [ext_resource type="PackedScene" uid="uid://u1h2an72jque" path="res://scenes/mage.tscn" id="4_3uns5"]
+[ext_resource type="Script" path="res://scripts/FButton.gd" id="4_5tiso"]
 [ext_resource type="Script" path="res://addons/virtual_joystick/virtual_joystick.gd" id="4_85xxd"]
+[ext_resource type="Texture2D" uid="uid://bkvmydfn5saxg" path="res://addons/virtual_joystick/textures/joystick_tip.png" id="4_hct43"]
+[ext_resource type="Script" path="res://scripts/ESCButton.gd" id="5_0bcaw"]
 [ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="5_jr5lf"]
 [ext_resource type="PackedScene" uid="uid://b5cmqm11v3tqb" path="res://scenes/coin.tscn" id="5_m7u2k"]
 [ext_resource type="Texture2D" uid="uid://ciktpothdkfrk" path="res://imgs/1.png" id="6_dn3w5"]
@@ -14,6 +17,17 @@
 [ext_resource type="Texture2D" uid="uid://d1jtputjg83yb" path="res://imgs/2.png" id="8_ggeab"]
 [ext_resource type="Texture2D" uid="uid://b63v3ccf7nq8c" path="res://imgs/3.png" id="9_i0ag7"]
 [ext_resource type="Script" path="res://scripts/coins/coin3.gd" id="12_s22sk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n7o7w"]
+font_size = 41
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CurveTexture" id="CurveTexture_0bva3"]
+width = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryyj6"]
+font_size = 61
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_253ga"]
 length = 0.001
@@ -68,6 +82,11 @@ _data = {
 "hide": SubResource("Animation_tw3hi"),
 "show": SubResource("Animation_b2d7g")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_mm0m2"]
+font_size = 61
+outline_size = 30
+outline_color = Color(0.169245, 0.169245, 0.169245, 1)
 
 [sub_resource type="Animation" id="Animation_ltu6b"]
 length = 0.001
@@ -200,7 +219,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Virtual Joystick" type="Control" parent="Control"]
-z_index = 1
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -286,6 +304,47 @@ offset_bottom = 160.0
 text = "D"
 horizontal_alignment = 1
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 478.0
+offset_right = 1144.0
+offset_bottom = 635.0
+alignment = 2
+
+[node name="ESCButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_hct43")
+script = ExtResource("5_0bcaw")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/ESCButton"]
+offset_left = 13.0
+offset_top = 23.0
+offset_right = 85.0
+offset_bottom = 80.0
+text = "ESC"
+label_settings = SubResource("LabelSettings_n7o7w")
+horizontal_alignment = 1
+
+[node name="Space" type="TextureButton" parent="Control/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture_normal = SubResource("CurveTexture_0bva3")
+
+[node name="FButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_hct43")
+script = ExtResource("4_5tiso")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/FButton"]
+offset_left = 30.0
+offset_top = 7.0
+offset_right = 70.0
+offset_bottom = 91.0
+text = "F"
+label_settings = SubResource("LabelSettings_ryyj6")
+horizontal_alignment = 1
+
 [node name="Task1" type="AnimationPlayer" parent="Control"]
 libraries = {
 "": SubResource("AnimationLibrary_p6c24")
@@ -293,9 +352,19 @@ libraries = {
 
 [node name="1" type="Sprite2D" parent="Control/Task1"]
 modulate = Color(1, 1, 1, 0)
+z_index = -1
 position = Vector2(575.517, 323.75)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("6_dn3w5")
+
+[node name="Label" type="Label" parent="Control/Task1/1"]
+offset_left = 265.805
+offset_top = 428.75
+offset_right = 939.805
+offset_bottom = 512.75
+text = "Aperte ESC para fechar"
+label_settings = SubResource("LabelSettings_mm0m2")
+horizontal_alignment = 1
 
 [node name="Task2" type="AnimationPlayer" parent="Control"]
 libraries = {
@@ -304,9 +373,19 @@ libraries = {
 
 [node name="2" type="Sprite2D" parent="Control/Task2"]
 modulate = Color(1, 1, 1, 0)
+z_index = -1
 position = Vector2(575.517, 323.75)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("8_ggeab")
+
+[node name="Label" type="Label" parent="Control/Task2/2"]
+offset_left = 265.805
+offset_top = 428.75
+offset_right = 939.805
+offset_bottom = 512.75
+text = "Aperte ESC para fechar"
+label_settings = SubResource("LabelSettings_mm0m2")
+horizontal_alignment = 1
 
 [node name="Task3" type="AnimationPlayer" parent="Control"]
 libraries = {
@@ -315,9 +394,19 @@ libraries = {
 
 [node name="3" type="Sprite2D" parent="Control/Task3"]
 modulate = Color(1, 1, 1, 0)
+z_index = -1
 position = Vector2(575.517, 323.75)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("9_i0ag7")
+
+[node name="Label" type="Label" parent="Control/Task3/3"]
+offset_left = 265.805
+offset_top = 428.75
+offset_right = 939.805
+offset_bottom = 512.75
+text = "Aperte ESC para fechar"
+label_settings = SubResource("LabelSettings_mm0m2")
+horizontal_alignment = 1
 
 [node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(1, 0, 0, 0, 0.916865, 0.399197, 0, -0.399197, 0.916865, 0, 4.19546, 6.76135)
@@ -381,6 +470,10 @@ visible = false
 text = "Sprint 67"
 font_size = 227
 
+[connection signal="button_down" from="Control/HBoxContainer/ESCButton" to="Control/HBoxContainer/ESCButton" method="_on_button_down"]
+[connection signal="button_up" from="Control/HBoxContainer/ESCButton" to="Control/HBoxContainer/ESCButton" method="_on_button_up"]
+[connection signal="button_down" from="Control/HBoxContainer/FButton" to="Control/HBoxContainer/FButton" method="_on_button_down"]
+[connection signal="button_up" from="Control/HBoxContainer/FButton" to="Control/HBoxContainer/FButton" method="_on_button_up"]
 [connection signal="body_entered" from="Coins/1" to="Coins/1" method="_on_body_entered"]
 [connection signal="body_exited" from="Coins/1" to="Coins/1" method="_on_body_exited"]
 [connection signal="body_entered" from="Coins/2" to="Coins/2" method="_on_body_entered"]

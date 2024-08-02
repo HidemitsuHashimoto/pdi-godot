@@ -1,3 +1,11 @@
 res://scenes/world.tscn
 res://addons/virtual_joystick/virtual_joystick.gd
 res://mesh/world.tres
+res://scenes/coin.tscn
+res://scripts/coins/coin1.gd
+res://scripts/coins/coin2.gd
+res://scripts/coins/coin3.gd
+res://scripts/SpriteAction1.gd
+res://scripts/FButton.gd
+res://scripts/ESCButton.gd
+res://scripts/CharacterBody3D.gd

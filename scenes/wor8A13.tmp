@@ -1,0 +1,481 @@
+[gd_scene load_steps=38 format=3 uid="uid://5p300a7hdbft"]
+
+[ext_resource type="MeshLibrary" uid="uid://dx1c366dxbe55" path="res://mesh/world.tres" id="1_3k5b4"]
+[ext_resource type="Script" path="res://scripts/CameraPivot.gd" id="1_dl3h3"]
+[ext_resource type="Script" path="res://scripts/CharacterBody3D.gd" id="2_poj2v"]
+[ext_resource type="PackedScene" uid="uid://u1h2an72jque" path="res://scenes/mage.tscn" id="4_3uns5"]
+[ext_resource type="Script" path="res://scripts/FButton.gd" id="4_5tiso"]
+[ext_resource type="Script" path="res://addons/virtual_joystick/virtual_joystick.gd" id="4_85xxd"]
+[ext_resource type="Texture2D" uid="uid://bkvmydfn5saxg" path="res://addons/virtual_joystick/textures/joystick_tip.png" id="4_hct43"]
+[ext_resource type="Script" path="res://scripts/ESCButton.gd" id="5_0bcaw"]
+[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://addons/virtual_joystick/textures/joystick_base_outline.png" id="5_jr5lf"]
+[ext_resource type="PackedScene" uid="uid://b5cmqm11v3tqb" path="res://scenes/coin.tscn" id="5_m7u2k"]
+[ext_resource type="Texture2D" uid="uid://ciktpothdkfrk" path="res://imgs/1.png" id="6_dn3w5"]
+[ext_resource type="Script" path="res://scripts/coins/coin1.gd" id="6_hg4ke"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://addons/virtual_joystick/textures/joystick_tip_arrows.png" id="6_yj1qk"]
+[ext_resource type="Script" path="res://scripts/coins/coin2.gd" id="7_jan8l"]
+[ext_resource type="Texture2D" uid="uid://d1jtputjg83yb" path="res://imgs/2.png" id="8_ggeab"]
+[ext_resource type="Texture2D" uid="uid://b63v3ccf7nq8c" path="res://imgs/3.png" id="9_i0ag7"]
+[ext_resource type="Script" path="res://scripts/coins/coin3.gd" id="12_s22sk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n7o7w"]
+font_size = 41
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CurveTexture" id="CurveTexture_0bva3"]
+width = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryyj6"]
+font_size = 61
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_253ga"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Task1/1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tw3hi"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Task1/1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b2d7g"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Task1/1:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p6c24"]
+_data = {
+"RESET": SubResource("Animation_253ga"),
+"hide": SubResource("Animation_tw3hi"),
+"show": SubResource("Animation_b2d7g")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_mm0m2"]
+font_size = 61
+outline_size = 30
+outline_color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[sub_resource type="Animation" id="Animation_ltu6b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Task2/2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_gu7ae"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Task2/2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_oeud2"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Task2/2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uup4v"]
+_data = {
+"RESET": SubResource("Animation_ltu6b"),
+"hide": SubResource("Animation_gu7ae"),
+"show": SubResource("Animation_oeud2")
+}
+
+[sub_resource type="Animation" id="Animation_u744x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Task3/3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_382xj"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Task3/3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1fpjq"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Task3/3:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1wke"]
+_data = {
+"RESET": SubResource("Animation_u744x"),
+"hide": SubResource("Animation_382xj"),
+"show": SubResource("Animation_1fpjq")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_us5il"]
+
+[sub_resource type="Sky" id="Sky_3llh2"]
+sky_material = SubResource("ProceduralSkyMaterial_us5il")
+
+[sub_resource type="Environment" id="Environment_p5g2x"]
+background_mode = 2
+sky = SubResource("Sky_3llh2")
+ssr_enabled = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8fn0j"]
+
+[node name="World" type="Node3D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Virtual Joystick" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -308.0
+offset_right = 300.0
+offset_bottom = -8.0
+grow_vertical = 0
+script = ExtResource("4_85xxd")
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_forward"
+action_down = "move_backward"
+
+[node name="Base" type="TextureRect" parent="Control/Virtual Joystick"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+mouse_force_pass_scroll_events = false
+texture = ExtResource("5_jr5lf")
+stretch_mode = 5
+
+[node name="Tip" type="TextureRect" parent="Control/Virtual Joystick/Base"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("6_yj1qk")
+stretch_mode = 5
+
+[node name="W" type="Label" parent="Control/Virtual Joystick"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 22.0
+offset_right = 173.0
+offset_bottom = 45.0
+text = "W"
+horizontal_alignment = 1
+
+[node name="A" type="Label" parent="Control/Virtual Joystick"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 137.0
+offset_right = 55.0
+offset_bottom = 160.0
+text = "A"
+horizontal_alignment = 1
+
+[node name="S" type="Label" parent="Control/Virtual Joystick"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 254.0
+offset_right = 173.0
+offset_bottom = 277.0
+text = "S"
+horizontal_alignment = 1
+
+[node name="D" type="Label" parent="Control/Virtual Joystick"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 137.0
+offset_right = 285.0
+offset_bottom = 160.0
+text = "D"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 644.0
+offset_top = 478.0
+offset_right = 1144.0
+offset_bottom = 635.0
+alignment = 2
+
+[node name="ESCButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_hct43")
+script = ExtResource("5_0bcaw")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/ESCButton"]
+offset_left = 13.0
+offset_top = 23.0
+offset_right = 85.0
+offset_bottom = 80.0
+text = "ESC"
+label_settings = SubResource("LabelSettings_n7o7w")
+horizontal_alignment = 1
+
+[node name="Space" type="TextureButton" parent="Control/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture_normal = SubResource("CurveTexture_0bva3")
+
+[node name="FButton" type="TextureButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_hct43")
+script = ExtResource("4_5tiso")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/FButton"]
+offset_left = 30.0
+offset_top = 7.0
+offset_right = 70.0
+offset_bottom = 91.0
+text = "F"
+label_settings = SubResource("LabelSettings_ryyj6")
+horizontal_alignment = 1
+
+[node name="Task1" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_p6c24")
+}
+
+[node name="1" type="Sprite2D" parent="Control/Task1"]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+position = Vector2(575.517, 323.75)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_dn3w5")
+
+[node name="Label" type="Label" parent="Control/Task1/1"]
+offset_left = 265.805
+offset_top = 428.75
+offset_right = 939.805
+offset_bottom = 512.75
+text = "Aperte ESC para fechar"
+label_settings = SubResource("LabelSettings_mm0m2")
+horizontal_alignment = 1
+
+[node name="Task2" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_uup4v")
+}
+
+[node name="2" type="Sprite2D" parent="Control/Task2"]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+position = Vector2(575.517, 323.75)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("8_ggeab")
+
+[node name="Label" type="Label" parent="Control/Task2/2"]
+offset_left = 265.805
+offset_top = 428.75
+offset_right = 939.805
+offset_bottom = 512.75
+text = "Aperte ESC para fechar"
+label_settings = SubResource("LabelSettings_mm0m2")
+horizontal_alignment = 1
+
+[node name="Task3" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_k1wke")
+}
+
+[node name="3" type="Sprite2D" parent="Control/Task3"]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+position = Vector2(575.517, 323.75)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_i0ag7")
+
+[node name="Label" type="Label" parent="Control/Task3/3"]
+offset_left = 265.805
+offset_top = 428.75
+offset_right = 939.805
+offset_bottom = 512.75
+text = "Aperte ESC para fechar"
+label_settings = SubResource("LabelSettings_mm0m2")
+horizontal_alignment = 1
+
+[node name="CameraPivot" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 0.916865, 0.399197, 0, -0.399197, 0.916865, 0, 4.19546, 6.76135)
+script = ExtResource("1_dl3h3")
+target = NodePath("../CharacterBody3D")
+
+[node name="Camera" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.607791, -1.39596)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_p5g2x")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_3k5b4")
+data = {
+"cells": PackedInt32Array(0, 2, 84, 0, 3, 103, 1, 3, 103, 2, 3, 655463, 3, 3, 655463, 4, 3, 655463, 1, 2, 655463, 4, 4, 103, 4, 5, 103, 3, 5, 103, 2, 5, 103, 1, 5, 103, 0, 5, 103, 2, 4, 655463, 3, 4, 655463, 1, 4, 103, 0, 4, 84, 65535, 4, 84, 65534, 4, 84, 65533, 4, 103, 65533, 5, 103, 65534, 5, 103, 65535, 5, 103, 65532, 5, 103, 65531, 5, 103, 65530, 5, 103, 65529, 5, 103, 65528, 5, 103, 65527, 5, 103, 65526, 5, 103, 65526, 4, 103, 65526, 3, 103, 65526, 2, 84, 65526, 1, 103, 65527, 1, 103, 65527, 0, 103, 65528, 0, 84, 65529, 0, 84, 65530, 0, 103, 65531, 0, 103, 65532, 0, 103, 65533, 0, 103, 65534, 0, 84, 65534, 1, 103, 65534, 2, 84, 65534, 3, 103, 65535, 3, 103, 65535, 2, 84, 65535, 1, 103, 65533, 2, 103, 65533, 3, 103, 65532, 3, 103, 65532, 4, 103, 65531, 4, 103, 65531, 3, 103, 65531, 2, 103, 65531, 1, 103, 65532, 1, 103, 65532, 2, 103, 65530, 3, 103, 65529, 3, 103, 65529, 4, 103, 65528, 4, 103, 65527, 4, 103, 65527, 3, 103, 65525, 1, 103, 65526, 0, 103, 65527, 2, 103, 65528, 2, 103, 65528, 1, 103, 65528, 3, 103, 65530, 2, 103, 65530, 4, 84, 65529, 2, 103, 65529, 1, 103, 65530, 1, 103, 65525, 5, 103, 65525, 4, 103, 65525, 3, 103, 65525, 2, 103, 65525, 0, 103, 65524, 65535, 103, 65525, 65535, 103, 65526, 65535, 103, 65527, 65535, 103, 65528, 65535, 103, 65529, 65535, 103, 65530, 65535, 103, 65531, 65535, 103, 65532, 65535, 103, 65533, 65535, 103, 65534, 65535, 103, 5, 2, 103, 5, 3, 103, 5, 4, 103, 5, 5, 103, 65524, 0, 103, 65524, 1, 103, 65524, 2, 103, 65524, 4, 103, 65524, 5, 103, 65524, 65533, 655463, 65525, 65533, 655463, 65526, 65533, 103, 65527, 65533, 103, 65528, 65533, 103, 65529, 65533, 103, 65530, 65533, 103, 65531, 65533, 103, 65532, 65533, 103, 65533, 65533, 103, 65534, 65533, 103, 7, 65533, 103, 7, 65534, 73, 7, 65535, 103, 7, 0, 103, 7, 1, 103, 7, 2, 103, 7, 3, 103, 7, 4, 103, 7, 5, 103, 7, 65531, 73, 6, 65531, 153, 5, 65531, 655433, 4, 65531, 103, 3, 65531, 103, 2, 65531, 103, 1, 65531, 103, 0, 65531, 655463, 65535, 65531, 103, 65534, 65531, 103, 65533, 65531, 103, 65532, 65531, 103, 65531, 65531, 103, 65530, 65531, 45, 65529, 65531, 103, 65528, 65531, 103, 65527, 65531, 103, 65526, 65531, 655463, 65525, 65531, 655438, 65524, 65531, 655435, 65524, 65529, 655463, 65525, 65529, 1441865, 65526, 65529, 103, 65527, 65529, 103, 65528, 65529, 103, 65529, 65529, 103, 65530, 65529, 103, 65531, 65529, 103, 65532, 65529, 103, 65533, 65529, 103, 65534, 65529, 103, 65535, 65529, 103, 0, 65529, 103, 0, 65530, 103, 1, 65530, 103, 2, 65530, 103, 3, 65530, 103, 4, 65530, 103, 5, 65530, 103, 4, 65529, 103, 3, 65529, 103, 2, 65529, 103, 5, 65529, 103, 6, 65529, 1048649, 7, 65529, 103, 7, 65527, 103, 6, 65527, 103, 5, 65527, 103, 4, 65527, 103, 3, 65527, 103, 2, 65527, 103, 1, 65527, 103, 0, 65527, 103, 65535, 65527, 103, 65534, 65527, 103, 65533, 65527, 103, 65532, 65527, 103, 65531, 65527, 103, 65530, 65527, 103, 65529, 65527, 103, 65528, 65527, 103, 65524, 65527, 655433, 65524, 65525, 103, 65525, 65525, 103, 65526, 65525, 103, 65527, 65525, 103, 65528, 65525, 103, 65529, 65525, 103, 65530, 65525, 103, 65531, 65525, 103, 65532, 65525, 103, 65533, 65525, 103, 65534, 65525, 103, 65535, 65525, 103, 0, 65525, 103, 1, 65525, 103, 2, 65525, 103, 3, 65525, 103, 4, 65525, 103, 5, 65525, 103, 6, 65525, 103, 7, 65525, 103, 7, 65523, 103, 6, 65523, 103, 4, 65523, 103, 2, 65523, 103, 1, 65523, 103, 0, 65523, 103, 65535, 65523, 103, 65534, 65523, 103, 65533, 65523, 103, 65532, 65523, 103, 65531, 65523, 103, 65530, 65523, 103, 65529, 65523, 103, 65528, 65523, 103, 65527, 65523, 103, 65526, 65523, 103, 65525, 65523, 103, 65524, 65523, 103, 65524, 65521, 103, 65526, 65521, 121, 65528, 65521, 1048656, 65530, 65521, 103, 65532, 65521, 103, 65534, 65521, 103, 0, 65521, 103, 2, 65521, 655463, 7, 65521, 103, 65533, 6, 179, 65535, 6, 179, 0, 6, 179, 1, 6, 179, 2, 6, 179, 3, 6, 179, 4, 6, 179, 5, 6, 179, 6, 6, 179, 7, 6, 179, 65529, 6, 179, 65528, 6, 179, 65527, 6, 179, 65526, 6, 179, 65524, 6, 179, 8, 5, 1048755, 8, 3, 1048755, 8, 1, 1048755, 8, 65535, 1048755, 8, 65533, 1048755, 8, 65531, 1048755, 8, 65529, 1048755, 8, 65527, 1048755, 8, 65525, 1048755, 8, 65523, 1048755, 65523, 5, 1048755, 65523, 3, 1048755, 65523, 1, 1048755, 65523, 65535, 1048755, 65523, 65533, 1048755, 65523, 65531, 1048755, 65523, 65529, 1048755, 65523, 65527, 1048755, 65523, 65525, 1048755, 65523, 65523, 1048755, 65523, 65521, 1048755, 65524, 65520, 179, 65532, 65496, 179, 65534, 65496, 179, 0, 65496, 179, 1, 65496, 179, 65530, 65519, 103, 65532, 65519, 103, 65533, 65519, 103, 65534, 65519, 103, 65535, 65519, 103, 0, 65519, 103, 1, 65519, 655463, 1, 65518, 655463, 1, 65517, 655463, 1, 65516, 655463, 0, 65516, 103, 0, 65517, 103, 65535, 65517, 103, 65534, 65517, 103, 65533, 65517, 103, 65532, 65517, 103, 65531, 65517, 103, 65530, 65517, 103, 65530, 65516, 103, 65530, 65515, 103, 65531, 65515, 103, 65532, 65515, 103, 65533, 65515, 103, 65534, 65515, 103, 65535, 65515, 103, 65535, 65514, 103, 0, 65514, 103, 0, 65513, 103, 1, 65513, 103, 1, 65514, 655463, 1, 65512, 103, 0, 65512, 103, 0, 65511, 103, 65535, 65511, 103, 65534, 65511, 103, 65533, 65511, 103, 65533, 65512, 103, 65533, 65513, 103, 65532, 65513, 103, 65531, 65513, 103, 65530, 65513, 103, 65530, 65512, 103, 65530, 65511, 103, 65531, 65511, 103, 65532, 65511, 103, 65534, 65512, 103, 65535, 65512, 103, 1, 65511, 103, 0, 65508, 103, 65535, 65508, 103, 65535, 65509, 103, 65535, 65510, 103, 0, 65510, 103, 65534, 65510, 103, 65533, 65509, 103, 65532, 65509, 103, 65531, 65509, 103, 65530, 65509, 103, 65530, 65508, 103, 65530, 65507, 103, 65530, 65506, 103, 65530, 65505, 103, 65531, 65505, 103, 65531, 65504, 103, 65532, 65504, 103, 65533, 65504, 103, 65534, 65504, 103, 65534, 65505, 103, 65533, 65505, 103, 65533, 65506, 103, 65533, 65507, 103, 65533, 65508, 103, 65534, 65507, 103, 65532, 65507, 103, 65535, 65507, 103, 65535, 65506, 103, 0, 65506, 103, 0, 65505, 103, 0, 65504, 103, 0, 65503, 103, 1, 65503, 103, 1, 65504, 103, 1, 65505, 103, 1, 65506, 103, 0, 65507, 103, 65534, 65506, 103, 65532, 65503, 103, 65533, 65502, 103, 65534, 65502, 103, 65535, 65502, 103, 65532, 65502, 103, 65531, 65503, 103, 65530, 65503, 103, 65530, 65502, 103, 65530, 65501, 103, 65530, 65500, 103, 65530, 65499, 103, 65530, 65498, 655463, 65532, 65497, 103, 65533, 65497, 103, 65534, 65497, 103, 65535, 65497, 103, 0, 65497, 655463, 0, 65498, 103, 1, 65498, 103, 1, 65499, 103, 1, 65500, 103, 1, 65501, 103, 1, 65502, 103, 1, 65497, 655463, 65533, 65498, 655463, 65532, 65498, 655463, 65532, 65499, 103, 65531, 65499, 103, 65531, 65500, 103, 65532, 65500, 103, 65533, 65500, 103, 65534, 65500, 103, 65535, 65500, 103, 65535, 65499, 103, 3, 65523, 103, 4, 65521, 1048656, 1, 65508, 103, 1, 65509, 103, 65525, 65519, 1441971, 65525, 65517, 1441971, 65525, 65515, 1441971, 65525, 65514, 1441971, 65525, 65513, 1441971, 65525, 65512, 1441971, 65525, 65511, 1441971, 65525, 65510, 1441971, 65525, 65509, 1441971, 65525, 65508, 1441971, 65525, 65507, 1048779, 65525, 65506, 1441971, 65525, 65505, 1441971, 65525, 65504, 1441971, 65525, 65503, 1441971, 65525, 65502, 1441971, 65525, 65501, 1441971, 65525, 65500, 1441971, 65525, 65499, 1441971, 65525, 65498, 1441971, 65525, 65497, 1441971, 6, 65519, 1441971, 6, 65518, 1048704, 6, 65517, 1441971, 6, 65516, 1441971, 6, 65515, 1441971, 6, 65514, 1441971, 6, 65513, 1441971, 6, 65512, 1441971, 6, 65511, 1441971, 6, 65510, 1441971, 6, 65509, 1441971, 6, 65508, 1441971, 6, 65507, 1441971, 6, 65506, 1441971, 6, 65505, 1441971, 6, 65504, 1441971, 6, 65503, 1441971, 6, 65502, 1441971, 6, 65501, 1441971, 6, 65500, 1441971, 6, 65499, 1441971, 6, 65498, 1441971, 6, 65497, 1441971, 65528, 65496, 655539, 65527, 65496, 655539, 65526, 65496, 1048679, 3, 65496, 203, 4, 65496, 655539, 5, 65496, 655539, 65529, 65520, 655463, 65529, 65519, 655463, 65528, 65519, 103, 65528, 65518, 103, 65527, 65518, 655463, 65527, 65517, 655463, 65527, 65516, 655463, 65526, 65518, 655463, 65526, 65519, 655463, 65527, 65515, 655463, 65527, 65514, 655463, 65527, 65513, 655463, 65528, 65513, 655463, 65528, 65512, 655463, 65528, 65511, 655463, 65529, 65511, 655463, 65529, 65510, 655463, 65529, 65509, 655463, 65529, 65508, 655463, 65529, 65507, 655463, 65529, 65506, 655463, 65529, 65505, 655463, 65529, 65504, 655463, 65529, 65503, 655463, 65529, 65502, 655463, 65529, 65501, 655463, 65529, 65500, 655463, 65529, 65499, 655463, 65529, 65498, 655463, 65529, 65497, 655463, 65528, 65497, 655463, 65527, 65497, 655463, 65526, 65497, 117, 65526, 65498, 655463, 65526, 65499, 655463, 65527, 65500, 655463, 65527, 65501, 655463, 65528, 65502, 655463, 65528, 65503, 655463, 65528, 65504, 655463, 65528, 65505, 655463, 65528, 65506, 655463, 65528, 65507, 655463, 65528, 65508, 655463, 65528, 65509, 655463, 65528, 65510, 655463, 65528, 65514, 655463, 65528, 65515, 655463, 65528, 65516, 103, 65528, 65517, 103, 65528, 65520, 103, 65527, 65519, 655463, 65526, 65517, 655463, 65526, 65516, 655463, 65526, 65515, 655463, 65526, 65514, 655463, 65526, 65513, 655463, 65526, 65512, 655463, 65526, 65511, 655463, 65526, 65510, 655463, 65526, 65509, 655463, 65526, 65508, 655463, 65526, 65507, 655463, 65526, 65506, 655463, 65526, 65505, 655463, 65526, 65504, 655463, 65526, 65503, 655463, 65526, 65502, 655463, 65526, 65501, 655463, 65527, 65499, 655463, 65528, 65499, 655463, 65534, 65498, 655463, 65535, 65498, 655463, 2, 65497, 655463, 3, 65497, 655463, 4, 65497, 655463, 5, 65497, 655463, 5, 65498, 655463, 5, 65499, 655463, 4, 65499, 655463, 3, 65499, 655463, 3, 65500, 655463, 3, 65501, 655463, 3, 65502, 655463, 3, 65503, 655463, 3, 65504, 655463, 3, 65505, 655463, 3, 65507, 655463, 3, 65508, 655463, 3, 65509, 655463, 2, 65510, 655463, 2, 65511, 655463, 2, 65512, 655463, 2, 65513, 655463, 1, 65515, 655463, 1, 65520, 655463, 1, 65521, 655463, 2, 65520, 655463, 3, 65520, 655463, 3, 65519, 655463, 3, 65518, 655463, 3, 65517, 655463, 3, 65516, 655463, 3, 65515, 655463, 3, 65514, 655463, 3, 65513, 655463, 3, 65512, 655463, 4, 65513, 655463, 4, 65514, 655463, 4, 65515, 655463, 4, 65516, 655463, 4, 65517, 655463, 4, 65518, 655463, 4, 65519, 655463, 5, 65519, 655463, 5, 65520, 655463, 5, 65518, 655463, 5, 65517, 655463, 5, 65516, 655463, 5, 65515, 655463, 5, 65514, 655463, 5, 65513, 655463, 5, 65512, 655463, 5, 65511, 655463, 5, 65510, 655463, 4, 65509, 655463, 4, 65508, 655463, 4, 65507, 655463, 4, 65506, 655463, 4, 65505, 655463, 4, 65504, 655463, 4, 65503, 655463, 4, 65502, 655463, 4, 65501, 655463, 4, 65500, 655463, 5, 65501, 655463, 5, 65502, 655463, 5, 65503, 655463, 5, 65504, 655463, 5, 65505, 655463, 5, 65506, 655463, 5, 65507, 655463, 4, 65510, 655463, 4, 65511, 655463, 4, 65512, 655463, 5, 65509, 655463, 7, 65520, 655549, 8, 65520, 186, 65523, 65520, 1048762, 65525, 65520, 1441978, 6, 65520, 655546, 65525, 65496, 1048762, 6, 65496, 186, 8, 6, 1441978, 65523, 6, 655546, 5, 65534, 655433, 5, 0, 655463, 5, 65532, 655463, 5, 65535, 655463, 5, 65533, 655463, 1, 1, 655463, 0, 1, 103, 2, 1, 655463, 3, 1, 655463, 3, 0, 655463, 3, 65535, 655463, 2, 65534, 655463, 1, 65533, 45, 1, 65532, 45, 0, 65532, 655463, 65535, 65532, 655463, 65535, 65533, 655463, 65535, 65534, 655463, 65535, 65535, 655463, 0, 65535, 655463, 1, 65535, 655463, 3, 65533, 655463, 3, 65532, 655463, 2, 65532, 45, 1, 65534, 655463, 3, 2, 655463, 2, 0, 655463, 1, 0, 655463, 0, 65534, 655463, 2, 2, 655463, 6, 0, 1441865, 6, 65521, 103, 8, 65521, 1048755, 5, 65521, 121, 65527, 65522, 103, 65527, 65521, 1048656, 65526, 65522, 103, 65526, 65520, 103, 65525, 65521, 103, 65528, 65522, 103, 65527, 65520, 103, 196598, 65521, 121, 131077, 65521, 121, 262149, 65521, 121, 327670, 65521, 121, 65525, 65524, 153, 6, 65534, 156, 8, 65526, 1441995, 65523, 65532, 655463, 65531, 65498, 655463, 65530, 65497, 103, 65530, 65496, 210, 65533, 1, 103, 65531, 6, 196, 7, 65532, 1048679, 7, 65530, 1048679, 65526, 65524, 73, 65525, 65522, 1048649, 65524, 65524, 655433, 65526, 65528, 655463, 65526, 65526, 655463, 65525, 65528, 655463, 65525, 65526, 655463, 65525, 65527, 155, 65526, 65527, 73, 65527, 65527, 103, 65524, 65526, 655463, 65524, 65528, 655463, 65524, 65530, 655463, 65524, 65532, 655438, 65525, 65530, 655463, 65526, 65530, 655463, 65526, 65532, 655463, 65525, 65532, 655463, 65525, 65534, 655463, 65523, 0, 1048779, 196597, 65520, 1048744, 131078, 65520, 1048744, 65535, 65496, 129, 65526, 65495, 103, 3, 65521, 1048656, 4, 65522, 1048679, 0, 65533, 45, 65532, 65530, 45, 65531, 65530, 45, 2, 65533, 103)
+}
+metadata/_editor_floor_ = Vector3(8, 0, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44403, -17.1087)
+collision_layer = 3
+script = ExtResource("2_poj2v")
+
+[node name="Mage" parent="CharacterBody3D" instance=ExtResource("4_3uns5")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.938075, 0)
+shape = SubResource("CylinderShape3D_8fn0j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 21, 0)
+
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="1" parent="Coins" instance=ExtResource("5_m7u2k")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -10.8306, 2.12503, -32.8572)
+collision_mask = 2
+script = ExtResource("6_hg4ke")
+
+[node name="2" parent="Coins" instance=ExtResource("5_m7u2k")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 3.36481, 2.12503, -42.6777)
+collision_mask = 2
+script = ExtResource("7_jan8l")
+
+[node name="3" parent="Coins" instance=ExtResource("5_m7u2k")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -7.02812, 1.85892, -63.06)
+collision_mask = 2
+script = ExtResource("12_s22sk")
+
+[node name="Labels" type="Node3D" parent="."]
+
+[node name="Title" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.17099, -10.9622)
+text = "Plano de desenvolvimento pessoal"
+font_size = 227
+
+[node name="Subtitle" type="Label3D" parent="Labels"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.79627, -10.9622)
+visible = false
+text = "Sprint 67"
+font_size = 227
+
+[connection signal="pressed" from="Control/HBoxContainer/ESCButton" to="Control/HBoxContainer/ESCButton" method="_on_pressed"]
+[connection signal="button_down" from="Control/HBoxContainer/FButton" to="Control/HBoxContainer/FButton" method="_on_button_down"]
+[connection signal="button_up" from="Control/HBoxContainer/FButton" to="Control/HBoxContainer/FButton" method="_on_button_up"]
+[connection signal="body_entered" from="Coins/1" to="Coins/1" method="_on_body_entered"]
+[connection signal="body_exited" from="Coins/1" to="Coins/1" method="_on_body_exited"]
+[connection signal="body_entered" from="Coins/2" to="Coins/2" method="_on_body_entered"]
+[connection signal="body_exited" from="Coins/2" to="Coins/2" method="_on_body_exited"]
+[connection signal="body_entered" from="Coins/3" to="Coins/3" method="_on_body_entered"]
+[connection signal="body_exited" from="Coins/3" to="Coins/3" method="_on_body_exited"]
